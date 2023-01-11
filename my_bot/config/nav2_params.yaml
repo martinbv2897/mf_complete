@@ -201,8 +201,8 @@ local_costmap:
 global_costmap:
   global_costmap:
     ros__parameters:
-      update_frequency: 1.0
-      publish_frequency: 1.0
+      update_frequency: 10.0
+      publish_frequency: 10.0
       global_frame: map
       robot_base_frame: base_link
       use_sim_time: False
@@ -226,7 +226,7 @@ global_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
-        inflation_radius: 0.55
+        inflation_radius: 0.39 #0.55
       always_send_full_costmap: True
   global_costmap_client:
     ros__parameters:
@@ -287,7 +287,6 @@ recoveries_server:
 robot_state_publisher:
   ros__parameters:
     use_sim_time: False
-
 
 ###############################################################################################################
 # amcl:

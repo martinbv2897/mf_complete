@@ -14,22 +14,24 @@ slam_toolbox:
     map_frame: map
     base_frame: base_footprint
     scan_topic: /scan
-    mode: mapping     #localization
+    mode: localization # mapping #
 
     # if you'd like to immediately start continuing a map at a given pose
     # or at the dock, but they are mutually exclusive, if pose is given
     # will use pose
     
-    #map_file_name: /home/mf/sala_serialize
+    map_file_name: /home/mf/sala_v8_serialize
     # map_start_pose: [0.0, 0.0, 0.0]
-   # map_start_at_dock: true
+    map_start_at_dock: true
 
     debug_logging: false
     throttle_scans: 1
     transform_publish_period: 0.02 #if 0 never publishes odometry
-    map_update_interval: 5.0
-    resolution: 0.05
-    max_laser_range: 20.0 #for rastering images
+    map_update_interval: 5.0 #5.0
+    #position_covariance_scale: 10.0
+    #yaw_covariance_scale: 10.0
+    resolution: 0.05 #0.05
+    max_laser_range: 8.0 #for rastering images
     minimum_time_interval: 0.5
     transform_timeout: 0.2
     tf_buffer_duration: 30.
@@ -41,7 +43,7 @@ slam_toolbox:
     use_scan_barycenter: true
     minimum_travel_distance: 0.5
     minimum_travel_heading: 0.5
-    scan_buffer_size: 10
+    scan_buffer_size: 10 #10
     scan_buffer_maximum_scan_distance: 10.0
     link_match_minimum_response_fine: 0.1  
     link_scan_maximum_distance: 1.5
@@ -53,7 +55,7 @@ slam_toolbox:
     loop_match_minimum_response_fine: 0.45
 
     # Correlation Parameters - Correlation Parameters
-    correlation_search_space_dimension: 0.5
+    correlation_search_space_dimension: 0.5 # 0.5
     correlation_search_space_resolution: 0.01
     correlation_search_space_smear_deviation: 0.1 
 
@@ -63,8 +65,8 @@ slam_toolbox:
     loop_search_space_smear_deviation: 0.03
 
     # Scan Matcher Parameters
-    distance_variance_penalty: 0.5      
-    angle_variance_penalty: 1.0    
+    distance_variance_penalty: 0.5  #0.5    
+    angle_variance_penalty: 1.0    #1.0
 
     fine_search_angle_offset: 0.00349     
     coarse_search_angle_offset: 0.349   
